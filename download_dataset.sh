@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Make datasets directory
+mkdir datasets
+
 # Download images
 wget http://imagenet.stanford.edu/internal/car196/car_ims.tgz -P datasets
 
