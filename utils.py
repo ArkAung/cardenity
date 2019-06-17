@@ -1,6 +1,7 @@
 import PIL.Image as Image
-import matplotlib.pytplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
 
 def display_image(image_pth):
@@ -25,3 +26,28 @@ def check_acc(y, preds):
     for i in range(len(y)):
         arr_acc.append(set(y[i].split()) == set(preds[i].split()))
     return np.mean(arr_acc)
+
+
+def prepare_annotations(annotations, class_names):
+    arr_annotations = []
+    for anno in annotations:
+        img_path = anno[0][0]
+        bbox_x1 = anno[1][0][0]
+        bbox_x2 = anno[2][0][0]
+        bbox_y1 = anno[3][0][0]
+        bbox_y2 = anno[4][0][0]
+        indx_class_name = anno[5][0][0]
+        train_test = anno[6][0][0]
+        string_class_name = class_names[indx_class_name - 1][0]
+        arr_annotations.append({'img_path': img_path,
+                                'bbox_x1': bbox_x1,
+                                'bbox_x2': bbox_x2,
+                                'bbox_y1': bbox_y1,
+                                'bbox_y2': bbox_y2,
+                                'indx_class_name': indx_class_name,
+                                'string_class_name': string_class_name,
+                                'train_test': train_test})
+
+    df = pd.DataFrame(arr_annotations, columns=['img_path', 'bbox_x1', 'bbox_x2', 'bbox_y1', 'bbox_y2',
+                                                'indx_class_name', 'string_class_name', 'train_test'])
+    return df
