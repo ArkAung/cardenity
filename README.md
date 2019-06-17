@@ -1,19 +1,29 @@
 Cardenity
 =========
 
-- Run ./download_dataset.sh
+
+- Run `./download_dataset.sh`
+    * This will download the dataset and unzip in `dataset` directory
 - Open notebook: `Data Analysis and Data Genration.ipynb`
+    * This is where you can check out data analysis steps. Commentaries are in the notebook.
 - Open notebook: `Model Training.ipynb`
+    * This is where you can check model training procedures. Commentaries are in the notebook.
+- Open notebook: `Model Testing.ipynb`
+    * This is where you can check model being evaluated on test set and qualitative results on test set.
+     Commentaries are in the notebook.
 
 
-Identity make and model of cars from images.
-
-## Ideas before implementation
+## Ideas
  
 - **Label separation training**: Original labels are further broken down for the model 
-to treat learning make and model as multi-task learning problem
+to treat learning make and model as multi-class multiple prediction problem. 
+(Details in `Data Analysis and Data Generation` Notebook)
 
-- **Data augmentation**: Every car has a character and even seeing A-pillar and B-pillar
+- **Synthetic Data Generation**: The original dataset is quite small and unbalanced. Data
+can be balanced by synthetically generating more data from original images. 
+(Details in `Data Analysis and Data Generation` Notebook)
+
+- **Data Augmentation**: Every car has a character and even seeing A-pillar and B-pillar
 will allow experts and enthusiasts to identify the make, model and year of the car
 pretty accurately. As a car enthusiast myself, I have tried doing that exercise 
 to get an idea of human baseline on identifying the vehicle just from parts of
