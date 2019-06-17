@@ -3,7 +3,7 @@ Cardenity
 
 
 - Run `./download_dataset.sh`
-    * This will download the dataset and unzip in `dataset` directory
+    * This will download the dataset and unzip in `datasets` directory
 - Open notebook: `Data Analysis and Data Genration.ipynb`
     * This is where you can check out data analysis steps. Commentaries are in the notebook.
 - Open notebook: `Model Training.ipynb`
@@ -11,7 +11,7 @@ Cardenity
 - Open notebook: `Model Testing.ipynb`
     * This is where you can check model being evaluated on test set and qualitative results on test set.
      Commentaries are in the notebook.
-
+     
 
 ## Ideas
  
