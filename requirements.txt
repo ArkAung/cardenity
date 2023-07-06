@@ -1,4 +1,4 @@
 fastai==1.0.52
 imgaug==0.2.9
 matplotlib==3.0.3
-scipy==1.3.0
+scipy==1.10.0
